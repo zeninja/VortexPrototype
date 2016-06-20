@@ -70,6 +70,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void HandleHit(int dmg) {
+		Debug.Log ("hit");
 		hp -= dmg;
 
 		Flash();

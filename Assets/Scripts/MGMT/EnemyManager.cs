@@ -26,5 +26,7 @@ public class EnemyManager : MonoBehaviour {
 	void SpawnPowerStrip() {
 		GameObject enemy = ObjectPool.instance.GetObjectForType("PowerStrip", false);
 		enemy.transform.position = (Vector2)transform.position + LaneManager.lanePositions[Random.Range(0, LaneManager.numLanes)];
+		Vector3 pos = new Vector3 (enemy.transform.position.x, enemy.transform.position.y, 1);
+		enemy.transform.position = pos;
 	}
 }

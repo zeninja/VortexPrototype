@@ -36,8 +36,10 @@ public class BulletController : MonoBehaviour {
 				}
 			} else {
 				// Enemies should be damaged by bullets of all colors
-				other.SendMessage("HandleHit", damage);
-				HandleDeath();
+				if (other.name == "Enemy") {
+					other.SendMessage ("HandleHit", damage);
+					HandleDeath ();
+				}
 			}
 		}
 	}

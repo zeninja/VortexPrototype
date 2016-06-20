@@ -32,7 +32,7 @@ public class SwipeController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			UpdateColor();
+			//UpdateColor();
 		}
 
 		canMove = Input.GetAxis("Horizontal") == 0;
@@ -50,10 +50,10 @@ public class SwipeController : MonoBehaviour {
 	}
 
 	void OnTap(TapGesture gesture) {
-		UpdateColor();
+		//UpdateColor();
 	}
 
-	void UpdateColor() {
+	 void UpdateColor() {
 		colorIndex++;
 		if (colorIndex >= 3) {
 			colorIndex = 0;
@@ -61,6 +61,15 @@ public class SwipeController : MonoBehaviour {
 
 		colorManager.SetColorByIndex(colorIndex);
 	}
+	public void UpdateColorChoice() {
+		colorIndex++;
+		if (colorIndex >= 3) {
+			colorIndex = 0;
+		}
+
+		colorManager.SetColorByIndex(colorIndex);
+	}
+
 
 	void ChangeLanes(int offset) {
 		laneIndex += offset;
